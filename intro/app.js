@@ -13,10 +13,16 @@ app.get('/blocks', function(request, response) {
   response.json(blocks); // same as above, serialize to JSON
 });
 
+// Redirect to new partial /parts - 302 status 'moved temporarily'
+app.get('/clock', function(request, response) {
+  response.redirect('/parts');
+});
+
 app.get('/sometext', function(request, response) {
   var sometext = '<ul><li>Some</li><li>Text</li></ul>';
   response.send(sometext);
 });
+
 
 app.listen(3000, function() {
   console.log('Express is running on port 3000...');
