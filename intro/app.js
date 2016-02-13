@@ -18,6 +18,11 @@ app.get('/clock', function(request, response) {
   response.redirect('/parts');
 });
 
+// Redirect to /parts partial - 301 status 'moved permanently'
+app.get('/car', function(request, response) {
+  response.redirect(301, '/parts');
+});
+
 app.get('/sometext', function(request, response) {
   var sometext = '<ul><li>Some</li><li>Text</li></ul>';
   response.send(sometext);
