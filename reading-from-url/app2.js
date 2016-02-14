@@ -11,7 +11,7 @@ var blocks = {
 app.get('/blocks/:name', function(request, response) {
   var description = blocks[request.params.name];
   if(!description) {
-    response.status(404).json('No description provided for: ' + request.params.name);
+    response.status(404).json('No description provided for: ' + request.params.nameß);
   } else {
     response.json(description);
   }

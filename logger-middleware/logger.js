@@ -7,7 +7,7 @@ module.exports = function(request, response, next) {
   var method = request.method;
 
   response.on('finish', function() { // event emitter listening on response being completed
-    var duration = +new Date() - start; // + sign formats date in number of miliseconds
+    var duration = +new Date() - start; // + sign formats date in number of milisecondsme
     var message = method + ' to ' + url + '\ntook' + duration + ' ms \n\n';
     stream.write(message);
   });
