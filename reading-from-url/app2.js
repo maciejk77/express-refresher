@@ -9,9 +9,12 @@ var blocks = {
 
 // Creating dynamic routes - request.params.name 
 app.get('/blocks/:name', function(request, response) {
-  var description = blocks[request.params.name];
+  var name = request.params.name;
+  var block = name[0].toUpperCase() + name.slice(1).toLowerCase();
+  var description = blocks[block];
+  
   if(!description) {
-    response.status(404).json('No description provided for: ' + request.params.nameß);
+    response.status(404).json('No description provided for: ' + request.params.name);
   } else {
     response.json(description);
   }
